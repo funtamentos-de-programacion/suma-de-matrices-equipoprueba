@@ -19,5 +19,14 @@ $(MAIN_EXEC): $(MAIN_SRC)
 $(TEST_EXEC): $(TEST_SRC) $(MAIN_EXEC)
 	$(CC) $(CFLAGS) -o $(TEST_EXEC) $(TEST_SRC) $(LDFLAGS)
 
+# Instrucciones para ejecutar el programa principal
+run: $(MAIN_EXEC)
+	./$(MAIN_EXEC)
+
+# Instrucciones para ejecutar las pruebas
+test: $(TEST_EXEC)
+	./$(TEST_EXEC)
+
+
 clean:
 	rm -f $(MAIN_EXEC) $(TEST_EXEC)
